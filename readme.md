@@ -1,6 +1,6 @@
 # Calculadora Simples
 
-Este é um projeto de uma calculadora simples desenvolvida com base na calculadora do Google. O objetivo principal foi praticar o uso de factory functions em JavaScript.
+Este é um projeto de uma calculadora simples desenvolvida com base na calculadora do Google. O objetivo principal foi praticar o uso de factory function e constructor function em JavaScript.
 
 ## Tecnologias Utilizadas
 - HTML
@@ -13,6 +13,7 @@ A calculadora possui as funcionalidades básicas de uma calculadora padrão, com
 
 ## Como Utilizar
 Basta abrir o arquivo index.html em um navegador web compatível com HTML5 para iniciar a calculadora.
+Utilizei duas formas de manipular os elementos  da calculadora com JS então você pode alterar o arquivo.JS no body do HTML para testar a aplicabilidade das duas formas sendo factory function ou constructor function. 
 
 ## Autor
 Este projeto foi desenvolvido por mim como parte de um exercício de prática em JavaScript.
