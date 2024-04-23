@@ -3,43 +3,35 @@ function Calculadora(){
 
     this.inicia = () => {
         this.cliqueBotoes();
+        this.capturaEnter();
     }; 
+
+    this.capturaEnter = () => {
+        this.display.addEventListener('keyup',(e) => {
+           if(e.code !== 'Enter') return;
+           this.realizaConta();
+        });
+    };
 
     this.cliqueBotoes = () => {
         document.addEventListener('click', (e)=>{
             const el = e.target;
 
-            if(el.classList.contains('btn-num')){
-                this.addNodisplay(el.innerText);
-            }
-            
-            if(el.classList.contains('btn-clear')){
-                this.limparDisplay();
-            }
-            
-            if(el.classList.contains('btn-del')){
-                this.deleteCaractere();
-            }
-            
-            if(el.classList.contains('btn-eq')){
-                this.realizaConta();
-            }
-
+            if(el.classList.contains('btn-num'))this.addNodisplay(el);          
+            if(el.classList.contains('btn-clear'))this.limparDisplay();
+            if(el.classList.contains('btn-del'))this.deleteCaractere();
+            if(el.classList.contains('btn-eq')) this.realizaConta();
         });
     };
-
-    this.addNodisplay = (valor) => {
-        this.display.value += valor;
-    }; 
-
-    this.limparDisplay = () => {
-        this.display.value = '';
+      
+    this.addNodisplay = el => {
+        this.display.value += el.innerText;
+        this.display.focus();
     };
-
-    this.deleteCaractere = () => {
-        this.display.value = this.display.value.slice(0,-1);
-    };
-
+    
+    this.limparDisplay = () => this.display.value = '';
+    this.deleteCaractere = () => this.display.value = this.display.value.slice(0,-1);  
+    
     this.realizaConta = () => {
         let conta = this.display.value;
 
@@ -57,9 +49,7 @@ function Calculadora(){
                 alert('Conta inválida');
                 return;
         }
-
     };
-
 }
 
 const calculadora = new Calculadora();
